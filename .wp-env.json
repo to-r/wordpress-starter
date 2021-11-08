@@ -1,0 +1,7 @@
+{
+  "core": "https://ja.wordpress.org/wordpress-5.8.1-ja.zip",
+  "plugins": [
+    "https://downloads.wordpress.org/plugin/all-in-one-wp-migration.7.50.zip"
+  ],
+  "themes": ["./wp-content/themes/to-r.co.jp"]
+}
