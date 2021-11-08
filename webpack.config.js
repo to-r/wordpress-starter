@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const PostCSSPresetEnv = require('postcss-preset-env');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -25,6 +26,12 @@ module.exports = {
           to: 'static',
         },
       ],
+    }),
+    new BrowserSyncPlugin({
+      host: 'localhost',
+      port: 3000,
+      proxy: 'http://localhost:8888',
+      files: ['wp-content/themes/to-r.co.jp/**/*'],
     }),
     new CleanWebpackPlugin(),
   ],
