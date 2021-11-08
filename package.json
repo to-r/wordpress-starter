@@ -22,6 +22,7 @@
     "eslint-config-prettier": "^8.3.0",
     "lint-staged": "^11.2.6",
     "mini-css-extract-plugin": "^2.4.4",
+    "npm-run-all": "^4.1.5",
     "postcss-loader": "^6.2.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.4.1",
@@ -37,6 +38,9 @@
     ]
   },
   "scripts": {
+    "start": "run-p start:*",
+    "start:webpack": "webpack --mode development --watch --color --progress",
+    "start:wordpress": "yarn run wp-env start",
     "wp-env": "wp-env",
     "build": "webpack",
     "format": "prettier --write src/**/*.{js,scss}",
