@@ -130,4 +130,4 @@ dist
 .history/
 
 # このプロジェクト用
-wp-content/themes/to-r.co.jp/assets
+theme/build

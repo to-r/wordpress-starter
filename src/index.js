@@ -1,3 +1,3 @@
 import './styles/main.scss';
 
-console.log('main!!', gsap);
+console.log( 'main!!' );
