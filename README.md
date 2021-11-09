@@ -14,13 +14,13 @@ $ yarn start
 
 ## フォルダ構成
 
-`theme`  
+`theme/*`  
 開発するテーマファイル一式。
 
 `plugins/*`  
 ローカルから利用したい WordPress プラグイン。`.wp-env.json` にもパスを追記してください。
 
-`src/**/*`  
+`src/*`  
 テーマ開発で利用する JavaScriptファイルとSCSSファイル。
 
 ## WordPress の開発
