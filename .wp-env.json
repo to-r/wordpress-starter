@@ -1,13 +1,12 @@
 {
-  "core": "https://ja.wordpress.org/wordpress-5.8.1-ja.zip",
-  "plugins": [
-    "https://downloads.wordpress.org/plugin/all-in-one-wp-migration.7.50.zip"
-  ],
-  "themes": ["./wp-content/themes/to-r.co.jp"],
-  "config": {
-    "WP_DEBUG": true,
-    "WP_DEBUG_LOG": true,
-    "WP_POST_REVISIONS": false,
-    "ASSETS_VERSION": "v1.0.0"
-  }
+	"core": "https://ja.wordpress.org/wordpress-5.8.1-ja.zip",
+	"plugins": [
+		"https://downloads.wordpress.org/plugin/all-in-one-wp-migration.7.50.zip"
+	],
+	"themes": [ "./theme" ],
+	"config": {
+		"WP_DEBUG": true,
+		"WP_DEBUG_LOG": true,
+		"WP_POST_REVISIONS": false
+	}
 }

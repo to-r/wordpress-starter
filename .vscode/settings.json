@@ -20,5 +20,4 @@
     "files.trimTrailingWhitespace": false
   },
   "npm.packageManager": "yarn",
-  "typescript.enablePromptUseWorkspaceTsdk": true
 }
