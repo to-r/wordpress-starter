@@ -7,4 +7,7 @@ module.exports = {
     jquery: true,
   },
   extends: ['eslint:recommended', 'prettier'],
+  globals: {
+    gsap: 'gsap',
+  },
 };

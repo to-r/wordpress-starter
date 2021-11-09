@@ -1,24 +1,18 @@
 {
   "name": "wp-template",
-  "version": "1.0.0",
-  "main": "index.js",
   "repository": "git@github.com:to-r/wp-template.git",
   "author": "Katsushi OUGI <ougi@to-r.net>",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.0",
     "@babel/eslint-parser": "^7.16.0",
-    "@babel/plugin-transform-runtime": "^7.16.0",
     "@babel/preset-env": "^7.16.0",
-    "@babel/runtime": "^7.16.0",
     "@wordpress/env": "^4.1.3",
     "babel-loader": "^8.2.3",
     "browser-sync": "^2.27.7",
     "browser-sync-webpack-plugin": "^2.3.0",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^9.0.1",
-    "core-js": "^3.19.1",
     "css-loader": "^6.5.1",
     "eslint": "^8.2.0",
     "eslint-config-prettier": "^8.3.0",
@@ -40,10 +34,8 @@
     ]
   },
   "scripts": {
-    "start": "run-p start:*",
-    "start:webpack": "webpack --mode development --watch --color --progress",
-    "start:wordpress": "yarn run wp-env start",
     "wp-env": "wp-env",
+    "start": "webpack --mode development --watch --color --progress",
     "build": "webpack",
     "format": "prettier --write src/**/*.{js,scss}",
     "lint": "eslint './src/**/*.js'"

@@ -4,6 +4,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const PostCSSPresetEnv = require('postcss-preset-env');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const webpack = require('webpack');
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -16,9 +17,11 @@ module.exports = {
     path: path.resolve(__dirname, 'wp-content/themes/to-r.co.jp/assets'),
   },
   plugins: [
+    // CSSファイルを別ファイルで出力
     new MiniCssExtractPlugin({
       filename: 'main.css',
     }),
+    // スタティックファイルのコピー
     new CopyPlugin({
       patterns: [
         {
@@ -27,12 +30,20 @@ module.exports = {
         },
       ],
     }),
+    // 外部ライブラリを利用するのでimport不要なもの
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery',
+      $: 'jquery',
+      'window.gsap': 'gsap',
+    }),
+    // 自動リロード
     new BrowserSyncPlugin({
       host: 'localhost',
       port: 3000,
       proxy: 'http://localhost:8888',
       files: ['wp-content/themes/to-r.co.jp/**/*'],
     }),
+    // assets削除
     new CleanWebpackPlugin(),
   ],
   module: {
@@ -63,5 +74,9 @@ module.exports = {
         ],
       },
     ],
+  },
+  externals: {
+    // 外部のjQueryを利用する
+    jquery: 'jQuery',
   },
 };

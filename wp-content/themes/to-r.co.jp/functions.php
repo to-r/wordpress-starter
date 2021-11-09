@@ -8,16 +8,25 @@ add_action(
         'theme',
         get_template_directory_uri() . '/assets/main.css',
         false,
-        'v1.0.0',
+        ASSETS_VERSION,
       );
 
+      // WordPressデフォルトのjQueryをオフ
       wp_deregister_script('jquery');
 
       wp_enqueue_script(
         'jquery',
         get_template_directory_uri() . '/assets/static/vendor/jquery-3.6.0.min.js',
         false,
-        'v1.0.0',
+        ASSETS_VERSION,
+        true
+      );
+
+      wp_enqueue_script(
+        'gsap',
+        get_template_directory_uri() . '/assets/static/vendor/gsap.min.js',
+        false,
+        ASSETS_VERSION,
         true
       );
 
@@ -25,9 +34,10 @@ add_action(
         'theme',
         get_template_directory_uri() . '/assets/main.js',
         array(
-          'jquery'
+          'jquery',
+          'gsap'
         ),
-        'v1.0.0',
+        ASSETS_VERSION,
         true
       );
     }
