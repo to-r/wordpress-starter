@@ -6,6 +6,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const webpack = require('webpack');
 
+// WordPressテーマ名
+const THEME_NAME = 'to-r.co.jp';
+
 const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
@@ -14,7 +17,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     clean: true,
-    path: path.resolve(__dirname, 'wp-content/themes/to-r.co.jp/assets'),
+    path: path.resolve(__dirname, `wp-content/themes/${THEME_NAME}/assets`),
   },
   plugins: [
     // CSSファイルを別ファイルで出力
@@ -41,7 +44,7 @@ module.exports = {
       host: 'localhost',
       port: 3000,
       proxy: 'http://localhost:8888',
-      files: ['wp-content/themes/to-r.co.jp/**/*'],
+      files: [`wp-content/themes/${THEME_NAME}/**/*`],
     }),
     // assets削除
     new CleanWebpackPlugin(),
@@ -76,7 +79,7 @@ module.exports = {
     ],
   },
   externals: {
-    // 外部のjQueryを利用する
     jquery: 'jQuery',
+    gsap: 'gsap',
   },
 };
