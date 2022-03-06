@@ -21,13 +21,14 @@ module.exports = {
   output: {
     filename: "[name]-[contenthash].js",
     path: path.join(__dirname, "theme/build"),
-    publicPath: "",
+    publicPath: "build/",
   },
   plugins: [
     new WebpackManifestPlugin(),
     new MiniCssExtractPlugin({
       filename: "[name]-[contenthash].css",
     }),
+    new CleanWebpackPlugin(),
   ].concat(
     isDev
       ? [
@@ -35,10 +36,10 @@ module.exports = {
             host: "localhost",
             port: 3000,
             proxy: "http://localhost:8888",
-            files: [`themes/**/*`],
+            files: [`theme/**/*`],
           }),
         ]
-      : [new CleanWebpackPlugin()]
+      : []
   ),
   module: {
     rules: [
