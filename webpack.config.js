@@ -20,6 +20,7 @@ module.exports = {
   output: {
     filename: "[name]-[contenthash].js",
     path: path.join(__dirname, "theme/build"),
+    publicPath: "",
   },
   plugins: [
     new WebpackManifestPlugin(),
