@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "wp-env": "wp-env",
-    "start": "webpack -w",
-    "build": "cross-env NODE_ENV=production webpack",
+    "start": "webpack --mode development -w",
+    "build": "webpack --mode production",
     "lint": "eslint --fix './src/**/*.js'",
     "format": "prettier --write **/*.{js,scss}"
   },
@@ -20,7 +20,6 @@
     "browser-sync": "^2.27.7",
     "browser-sync-webpack-plugin": "^2.3.0",
     "clean-webpack-plugin": "^4.0.0",
-    "cross-env": "^7.0.3",
     "css-loader": "^6.7.0",
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.5.0",
