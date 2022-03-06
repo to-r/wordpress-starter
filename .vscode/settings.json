@@ -1,16 +1,10 @@
 {
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "eslint.packageManager": "yarn",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[javascript]": {
-    "editor.formatOnSave": true
-  },
-  "[json]": {
-    "editor.formatOnSave": true
-  },
   "editor.rulers": [80],
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
