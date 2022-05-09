@@ -1,6 +1,4 @@
-/* eslint-disable no-undef */
 const path = require("path");
-const PostCSSPresetEnv = require("postcss-preset-env");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -48,21 +46,16 @@ module.exports = {
         loader: "babel-loader",
       },
       {
-        test: /\.s?css/i,
+        test: /\.css/i,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
           {
-            loader: "postcss-loader",
+            loader: "css-loader",
             options: {
-              postcssOptions: {
-                plugins: [PostCSSPresetEnv()],
-              },
+              importLoaders: 1,
             },
           },
-          {
-            loader: "sass-loader",
-          },
+          "postcss-loader",
         ],
       },
     ],
