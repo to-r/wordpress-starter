@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const isDev = process.env.NODE_ENV !== "production";
 
@@ -50,5 +51,8 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
     ],
+  },
+  optimization: {
+    minimizer: [].concat(isDev ? [] : [new CssMinimizerPlugin()]),
   },
 };
