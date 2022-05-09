@@ -14,4 +14,8 @@
     "files.trimTrailingWhitespace": false
   },
   "npm.packageManager": "yarn",
+  "css.validate": false,
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  }
 }

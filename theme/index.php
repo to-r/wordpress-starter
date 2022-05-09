@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,10 @@
 	<title>Document</title>
 	<?php wp_head(); ?>
 </head>
+
 <body>
 	<p>Hello World..</p>
 	<?php wp_footer(); ?>
 </body>
+
 </html>
