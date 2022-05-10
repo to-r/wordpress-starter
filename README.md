@@ -29,10 +29,6 @@ $ yarn start
 
 - browser-sync を利用するのでポート番号は変更しないでください。
 
-## JavaScript, CSS の開発
-
-[@wordpress/scripts](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/) を利用します。詳細はドキュメントを確認してください。
-
 ## データベースの共有について
 
 - [All-in-One WP Migration](https://ja.wordpress.org/plugins/all-in-one-wp-migration/) を利用して、リモートサーバー経由で他メンバーとデータベースを共有しましょう。
