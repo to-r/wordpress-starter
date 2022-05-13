@@ -10,9 +10,7 @@
 </head>
 
 <body>
-	<h1 class="text-3xl font-bold underline text-[12px]">
-		Hello world!
-	</h1>
+	<p>Hello World..</p>
 	<?php wp_footer(); ?>
 </body>
 
