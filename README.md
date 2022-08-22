@@ -1,6 +1,8 @@
 # WordPress Starter
- 
+
 ## 開発方法
+
+`theme` ディレクトリ名はプロジェクトに応じて変更してください。
 
 ```sh
 # 必要なモジュールをインストールします(初回のみ)
@@ -21,7 +23,7 @@ $ yarn start
 ローカルから利用したい WordPress プラグイン。`.wp-env.json` にもパスを追記してください。
 
 `src/*`  
-テーマ開発で利用する JavaScriptファイルとSCSSファイル。
+テーマ開発で利用する JavaScript ファイルと SCSS ファイル。
 
 ## WordPress の開発
 

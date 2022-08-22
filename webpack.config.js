@@ -18,14 +18,14 @@ module.exports = {
   devtool: isDev ? "cheap-module-source-map" : "source-map",
   entry: "./src/index.js",
   output: {
-    filename: "[name]-[contenthash].js",
+    filename: "main.js",
     path: path.join(__dirname, "theme/build"),
     publicPath: "build/",
   },
   plugins: [
     new WebpackManifestPlugin(),
     new MiniCssExtractPlugin({
-      filename: "[name]-[contenthash].css",
+      filename: "main.css",
     }),
     new CleanWebpackPlugin(),
   ].concat(
