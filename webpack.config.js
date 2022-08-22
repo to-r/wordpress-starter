@@ -1,5 +1,4 @@
 const path = require("path");
-const postcssPresetEnv = require("postcss-preset-env");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -50,12 +49,17 @@ module.exports = {
         test: /\.s?css/i,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
+          {
+            loader: "css-loader",
+            options: {
+              url: false,
+            },
+          },
           {
             loader: "postcss-loader",
             options: {
               postcssOptions: {
-                plugins: [postcssPresetEnv()],
+                plugins: [require("autoprefixer")({ grid: true })],
               },
             },
           },
