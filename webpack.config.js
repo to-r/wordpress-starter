@@ -2,7 +2,6 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 
 const isDev = process.env.NODE_ENV !== "production";
@@ -16,18 +15,16 @@ module.exports = {
   },
   performance: { hints: isDev ? false : "warning" },
   devtool: isDev ? "cheap-module-source-map" : "source-map",
-  // entry: "./src/index.js",
   entry: {
     "wordpress/wp-content/themes/my-theme/webpack": [
       path.resolve(__dirname, "src/js/main.js"),
       path.resolve(__dirname, "src/scss/main.scss"),
     ],
+    "site/webpack": [
+      path.resolve(__dirname, "src/js/main.js"),
+      path.resolve(__dirname, "src/scss/main.scss"),
+    ],
   },
-  // output: {
-  //   filename: "main.js",
-  //   path: path.join(__dirname, "theme/build"),
-  //   publicPath: "build/",
-  // },
   output: {
     filename: "[name]/main.js",
     path: __dirname,
@@ -38,7 +35,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name]/main.css",
     }),
-    // new CleanWebpackPlugin(),
   ].concat(
     isDev
       ? [

@@ -131,3 +131,5 @@ dist
 
 # このプロジェクト用
 wordpress/wp-content/themes/my-theme/webpack
+site
+manifest.json
