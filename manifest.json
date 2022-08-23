@@ -1,0 +1,10 @@
+{
+  "wordpress/wp-content/themes/my-theme/assets.css": "/webpack/wordpress/wp-content/themes/my-theme/assets/main.css",
+  "wordpress/wp-content/themes/my-theme/assets.js": "/webpack/wordpress/wp-content/themes/my-theme/assets/main.js",
+  "site/webpack.css": "/webpack/site/webpack/main.css",
+  "site/webpack.js": "/webpack/site/webpack/main.js",
+  "site/webpack/static/.keep": "/webpack/site/webpack/static/.keep",
+  "wordpress/wp-content/themes/my-theme/assets/static/.keep": "/webpack/wordpress/wp-content/themes/my-theme/assets/static/.keep",
+  "main.css.map": "/webpack/site/webpack/main.css.map",
+  "main.js.map": "/webpack/site/webpack/main.js.map"
+}
