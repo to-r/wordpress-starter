@@ -20,7 +20,7 @@ module.exports = {
       path.resolve(__dirname, "src/js/main.js"),
       path.resolve(__dirname, "src/scss/main.scss"),
     ],
-    "site/webpack": [
+    "site/assets": [
       path.resolve(__dirname, "src/js/main.js"),
       path.resolve(__dirname, "src/scss/main.scss"),
     ],
