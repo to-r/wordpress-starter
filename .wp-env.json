@@ -1,8 +1,8 @@
 {
   "core": "https://ja.wordpress.org/wordpress-6.0.1-ja.zip",
-  "themes": ["./wordpress/wp-content/themes/my-theme"],
+  "themes": ["./wp-content/themes/my-theme"],
   "mappings": {
-    "wp-content/uploads": "./wordpress/wp-content/uploads",
+    "wp-content/uploads": "./wp-content/uploads",
     "sql": "./sql"
   },
   "plugins": [

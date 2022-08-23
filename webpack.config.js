@@ -16,7 +16,7 @@ module.exports = {
   performance: { hints: isDev ? false : "warning" },
   devtool: isDev ? "cheap-module-source-map" : "source-map",
   entry: {
-    "wordpress/wp-content/themes/my-theme/assets": [
+    "wp-content/themes/my-theme/assets": [
       path.resolve(__dirname, "src/js/main.js"),
       path.resolve(__dirname, "src/scss/main.scss"),
     ],
@@ -39,7 +39,7 @@ module.exports = {
       patterns: [
         {
           from: "src/static",
-          to: "wordpress/wp-content/themes/my-theme/assets/static",
+          to: "wp-content/themes/my-theme/assets/static",
         },
         {
           from: "src/static",
