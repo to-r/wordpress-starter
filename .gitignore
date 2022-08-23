@@ -130,6 +130,6 @@ dist
 .history/
 
 # このプロジェクト用
-wordpress/wp-content/themes/my-theme/webpack
+wordpress/wp-content/themes/my-theme/assets
 site
 manifest.json

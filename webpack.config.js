@@ -2,7 +2,7 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
-const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const isDev = process.env.NODE_ENV !== "production";
 
@@ -16,7 +16,7 @@ module.exports = {
   performance: { hints: isDev ? false : "warning" },
   devtool: isDev ? "cheap-module-source-map" : "source-map",
   entry: {
-    "wordpress/wp-content/themes/my-theme/webpack": [
+    "wordpress/wp-content/themes/my-theme/assets": [
       path.resolve(__dirname, "src/js/main.js"),
       path.resolve(__dirname, "src/scss/main.scss"),
     ],
@@ -35,18 +35,19 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name]/main.css",
     }),
-  ].concat(
-    isDev
-      ? [
-          new BrowserSyncPlugin({
-            host: "localhost",
-            port: 3000,
-            proxy: "http://localhost:8888",
-            files: [`theme/**/*`],
-          }),
-        ]
-      : []
-  ),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: "src/static",
+          to: "wordpress/wp-content/themes/my-theme/assets/static",
+        },
+        {
+          from: "src/static",
+          to: "site/webpack/static",
+        },
+      ],
+    }),
+  ],
   module: {
     rules: [
       {

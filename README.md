@@ -38,5 +38,3 @@ $ yarn run wp-env run cli wp db import sql/db.sql
 ## WordPress の開発
 
 [@wordpress/env](https://ja.wordpress.org/team/handbook/block-editor/reference-guides/packages/packages-env/) を利用します。詳細はドキュメントを確認してください。
-
-- browser-sync を利用するのでポート番号は変更しないでください。

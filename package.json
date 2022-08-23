@@ -9,9 +9,8 @@
     "start:webpack": "webpack -w",
     "start": "cross-env NODE_ENV=development run-p start:*",
     "build:11ty": "eleventy",
-    "build": "cross-env NODE_ENV=production webpack",
-    "lint": "eslint --fix './src/**/*.js'",
-    "format": "prettier --write **/*.{js,scss}"
+    "build:webpack": "webpack",
+    "build": "cross-env NODE_ENV=production run-p build:*"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
@@ -23,7 +22,7 @@
     "autoprefixer": "^10.4.8",
     "babel-loader": "^8.2.5",
     "browser-sync": "^2.27.10",
-    "browser-sync-webpack-plugin": "^2.3.0",
+    "copy-webpack-plugin": "^11.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "eslint": "^8.22.0",
