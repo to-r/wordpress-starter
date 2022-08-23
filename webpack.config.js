@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
@@ -15,18 +16,29 @@ module.exports = {
   },
   performance: { hints: isDev ? false : "warning" },
   devtool: isDev ? "cheap-module-source-map" : "source-map",
-  entry: "./src/index.js",
+  // entry: "./src/index.js",
+  entry: {
+    "wordpress/wp-content/themes/my-theme/webpack": [
+      path.resolve(__dirname, "src/js/main.js"),
+      path.resolve(__dirname, "src/scss/main.scss"),
+    ],
+  },
+  // output: {
+  //   filename: "main.js",
+  //   path: path.join(__dirname, "theme/build"),
+  //   publicPath: "build/",
+  // },
   output: {
-    filename: "main.js",
-    path: path.join(__dirname, "theme/build"),
-    publicPath: "build/",
+    filename: "[name]/main.js",
+    path: __dirname,
+    publicPath: "/webpack/",
   },
   plugins: [
     new WebpackManifestPlugin(),
     new MiniCssExtractPlugin({
-      filename: "main.css",
+      filename: "[name]/main.css",
     }),
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
   ].concat(
     isDev
       ? [

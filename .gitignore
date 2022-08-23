@@ -130,4 +130,4 @@ dist
 .history/
 
 # このプロジェクト用
-theme/build
+wordpress/wp-content/themes/my-theme/webpack

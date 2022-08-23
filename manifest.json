@@ -1,0 +1,6 @@
+{
+  "wordpress/wp-content/themes/my-theme/webpack.css": "/webpack/wordpress/wp-content/themes/my-theme/webpack/main.css",
+  "wordpress/wp-content/themes/my-theme/webpack.js": "/webpack/wordpress/wp-content/themes/my-theme/webpack/main.js",
+  "main.css.map": "/webpack/wordpress/wp-content/themes/my-theme/webpack/main.css.map",
+  "main.js.map": "/webpack/wordpress/wp-content/themes/my-theme/webpack/main.js.map"
+}
