@@ -3,7 +3,7 @@
   "themes": ["./wordpress/wp-content/themes/my-theme"],
   "mappings": {
     "wp-content/uploads": "./wordpress/wp-content/uploads",
-    "import.sql": "./import.sql"
+    "sql": "./sql"
   },
   "plugins": [
     "https://downloads.wordpress.org/plugin/all-in-one-wp-migration.7.50.zip"

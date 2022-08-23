@@ -14,6 +14,16 @@ $ yarn start
 # http://localhost:3000 でローカルサーバーが起動します
 ```
 
+### データベースの操作
+
+```sh
+# DBのエクスポート
+$ yarn run wp-env run cli wp db export sql/db.sql
+
+# DBのインポート
+$ yarn run wp-env run cli wp db import sql/db.sql
+```
+
 ## フォルダ構成
 
 `theme/*`  
