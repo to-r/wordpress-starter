@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	<h1 class="text-center">Hello World..</h1>
+	<h1 class="text-center px-4 py-2 bg-sky-50">Hello World..</h1>
 	<?php wp_footer(); ?>
 </body>
 
