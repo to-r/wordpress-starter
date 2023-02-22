@@ -9,7 +9,8 @@
     "start:bs": "browser-sync start --config bs-config.js",
     "start": "run-p start:*",
     "build:tailwind": "tailwindcss -i ./wp-content/themes/my-theme/assets/css/_main.css -o ./wp-content/themes/my-theme/assets/css/main.css --minify",
-    "build": "run-p build:*"
+    "build": "run-p build:*",
+    "eslint": "eslint --fix ./wp-content/themes/**/*.js"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
