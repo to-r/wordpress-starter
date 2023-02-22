@@ -6,21 +6,14 @@
 # 必要なモジュールをインストールします(初回のみ)
 $ yarn install
 # ローカル環境で WordPress を起動します
-# WordPressテーマ開発しない場合は不要
 $ yarn run wp-env start
-# webpack を起動します
+# browser-sync を起動します
 $ yarn start
 ```
 
 ## ローカルサーバー
 
-### HTML 開発用
-
-http://localhost:8080/
-
-### WordPress テーマ開発用
-
-http://localhost:8888/
+http://localhost:3000/
 
 ### データベースの操作
 
@@ -41,6 +34,3 @@ WordPress テーマの開発。
 
 `wordpress/wp-content/plugins`  
 ローカルから利用したい WordPress プラグイン。`.wp-env.json` にもパスを追記してください。
-
-`src`  
-テーマ開発で利用する JavaScript ファイルと SCSS ファイルと画像などのスタティックファイル。

@@ -130,6 +130,6 @@ dist
 .history/
 
 # このプロジェクト用
-wp-content/themes/my-theme/assets
+wp-content/themes/my-theme/assets/css/main.css
 site
 manifest.json
