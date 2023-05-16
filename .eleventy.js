@@ -3,8 +3,6 @@ const path = require("path");
 const THEME_PATH = "wp-content/themes/my-theme";
 
 module.exports = (config) => {
-  // const manifestPath = path.resolve(__dirname, "manifest.json");
-
   // nunjucks settings
   config.setNunjucksEnvironmentOptions({
     throwOnUndefined: true,
