@@ -130,6 +130,5 @@ dist
 .history/
 
 # このプロジェクト用
-wp-content/themes/my-theme/assets
-site
-manifest.json
+wp-content/themes/my-theme/html-template
+wp-content/themes/my-theme/static/assets/css

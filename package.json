@@ -3,43 +3,33 @@
   "repository": "git@github.com:to-r/wp-template.git",
   "author": "Katsushi OUGI <ougi@to-r.net>",
   "license": "MIT",
+  "config": {
+    "sass": "./wp-content/themes/my-theme/static/assets/scss/root.scss",
+    "tmp": "./wp-content/themes/my-theme/static/assets/css/.tmp.css",
+    "css": "./wp-content/themes/my-theme/static/assets/css/common.css"
+  },
   "scripts": {
     "wp-env": "wp-env",
+    "build": "run-s clean build:11ty build:css",
+    "start": "npm-run-all -s clean -p start:*",
     "start:11ty": "eleventy --serve",
-    "start:webpack": "webpack -w",
-    "start": "cross-env NODE_ENV=development run-p start:*",
     "build:11ty": "eleventy",
-    "build:webpack": "webpack",
-    "build": "cross-env NODE_ENV=production run-p build:*",
-    "clean": "rimraf site && rimraf wp-content/themes/my-theme/assets",
-    "prebuild": "yarn run clean"
+    "clean": "rimraf wp-content/themes/my-theme/html-template",
+    "build:sass": "sass $npm_package_config_sass $npm_package_config_tmp --no-source-map",
+    "build:postcss": "postcss $npm_package_config_tmp -o $npm_package_config_css --no-map",
+    "build:css": "run-s build:sass build:postcss",
+    "start:css": "npm-run-all -s 'build:css' -p 'build:sass -w' 'build:postcss -w'"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
-    "@babel/core": "^7.18.10",
-    "@babel/eslint-parser": "^7.18.9",
-    "@babel/plugin-transform-runtime": "^7.18.10",
-    "@babel/preset-env": "^7.18.10",
     "@wordpress/env": "^5.2.0",
     "autoprefixer": "^10.4.8",
-    "babel-loader": "^8.2.5",
-    "browser-sync": "^2.27.10",
-    "copy-webpack-plugin": "^11.0.0",
-    "cross-env": "^7.0.3",
-    "css-loader": "^6.7.1",
-    "eslint": "^8.22.0",
-    "eslint-config-prettier": "^8.5.0",
-    "mini-css-extract-plugin": "^2.6.1",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.16",
-    "postcss-loader": "^7.0.1",
+    "postcss-cli": "^10.1.0",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
-    "sass": "^1.54.5",
-    "sass-loader": "^13.0.2",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0",
-    "webpack-manifest-plugin": "^5.0.0"
+    "sass": "^1.54.5"
   },
   "browserslist": [
     "> 2%"
